@@ -1,0 +1,171 @@
+#DML FOR CUSTOMER TABLE
+
+INSERT INTO CUSTOMER
+VALUES (1, 'Isatou', 'Jallow', 'Via Roma' ,5,67100),
+		(2, 'Jawando', 'Ann', 'Via Roma' ,5,67100),
+        (3, 'Bubacarr', 'Chune', 'Via Taramo' ,15,67100);
+
+UPDATE CUSTOMER
+SET FirstName = 'Ma Isatou', Street= 'Via Pescara'
+WHERE Customer_ID = 1;
+
+DELETE FROM CUSTOMER WHERE Customer_ID=1;
+
+#DML FOR ELF TABLE
+
+INSERT INTO ELF
+VALUES (1, '3', 'Adama', 'Ann'),
+		(2, '3', 'Awa', 'Ann'),
+        (3, '2', 'Yusuf', 'Ann'),
+     	(4, '3', 'Lamin', 'Ann');
+
+UPDATE ELF
+SET YearofExperience = 1
+WHERE ELF_ID = 1;
+
+DELETE FROM ELF WHERE ELF_ID=1;
+
+
+#DML FOR LOCALIZATION TABLE
+
+INSERT INTO LOCALIZATION
+VALUES 	(1, 'ITALY'),
+		(2, 'SPAIN');
+
+UPDATE LOCALIZATION
+SET Name = 'ITALIA'
+WHERE LOCALIZATION_ID = 1;
+
+DELETE FROM LOCALIZATION WHERE LOCALIZATION_ID=1;
+# DML FOR GIFT TYPE
+INSERT INTO GIFTTYPE
+VALUES (1, 'Dress'),
+		(2, 'HighTech'),
+		(3, 'Fashion'),
+		(4, 'Capentary');
+ 
+UPDATE GIFTTYPE
+SET Name = 'High-Tech'
+ WHERE Type_ID = 2;  
+
+DELETE FROM GIFTTYPE WHERE Type_ID=1;
+
+-- RAW MATERIALS
+
+INSERT INTO Raw_Material
+VALUES (1, 'Flour',200,0),
+		(2,  'Corn',200,1);
+
+UPDATE Raw_Material
+SET Name = 'Flour'
+ WHERE Raw_Material_ID = 2;  
+
+DELETE FROM Raw_Material WHERE Raw_Material_ID=1;
+
+-- DEPARTMENT
+
+INSERT INTO DEPARTMENT
+VALUES (1,2,2, 'Shipping',20),
+		(2,3,2, 'PRODUCTION',100),
+		(3,4,2, 'TECHNICAL',5);
+UPDATE DEPARTMENT
+SET Name = 'Finance'
+ WHERE Department_ID = 1;  
+
+DELETE FROM DEPARTMENT WHERE Department_ID=1;
+
+
+#DML FOR GIFT TYPE TABLE
+
+ INSERT INTO GIFT
+ VALUES (1, 'FD001','Birthday Cake','BK2021','Medium',2,'Production',2,'FD001BK', '2021-10-15'),
+ 		(2, 'EL002','Laptop','LC2021','small',2,'Production',2,'EL001LC', '2021-10-12');
+
+UPDATE GIFT
+SET Name = 'Laptop Computer'
+WHERE Gift_ID = 2; 
+
+DELETE FROM GIFT WHERE Gift_ID=1;
+
+# DML FOR LOADING TABLE
+
+INSERT INTO LOADING
+VALUES (1,'EXPRESS', '2021-10-25',2,2),
+		(2,'ONE WAY CARRIER', '2021-10-20',2,2);
+
+UPDATE LOADING
+SET Date = '2021-10-26'
+ WHERE Load_ID = 2;  
+
+DELETE FROM LOADING WHERE Load_ID=1;
+
+# DML FOR SHIPPING
+
+INSERT INTO SHIPPING
+VALUES (1, '2021-10-25',2),
+		(2, '2021-10-20',2);
+
+UPDATE SHIPPING
+SET ShippingDate = '2021-10-26'
+ WHERE Shipping_ID = 2;  
+
+DELETE FROM SHIPPING WHERE Shipping_ID=1;
+
+-- DML FOR COLLOUR 
+INSERT INTO COLOUR
+VALUES (1, 'Blue',2),
+		(2, 'Green',2);
+
+UPDATE COLOUR
+SET Name = 'Blue'
+ WHERE Colour_ID = 2;  
+
+DELETE FROM COLOUR WHERE Colour_ID=1;
+
+
+
+-- SUBDEPARTMENT
+INSERT INTO SUBDEPARTMENT
+	VALUES (1,2, 'Loading'),
+		   (2,2, 'Computer Tech'),
+		   (3,3, 'Elactricians');
+
+ UPDATE SUBDEPARTMENT
+ SET Name = 'Computer Technicians'
+  WHERE SUBDepartment_ID = 2;  
+
+DELETE FROM SUBDEPARTMENT WHERE SUBDepartment_ID=1;
+
+-- WORKS ON 
+INSERT INTO WORKS_ON
+	VALUES (2,2, 2),
+		   (3,3, 4);
+
+ UPDATE WORKS_ON
+ SET Elf = 2
+  WHERE GiftType = 2;  
+
+DELETE FROM WORKS_ON WHERE GiftType=2;
+
+-- WORKS ON
+
+INSERT INTO PRODUCES
+	VALUES (1, 2,2,50,3),
+		   (2,3,2,20,2);
+
+ UPDATE PRODUCES
+ SET Hours = 3
+  WHERE GiftType = 3;  
+
+DELETE FROM PRODUCES WHERE GiftType=2;
+
+INSERT INTO REQUEST
+	VALUES (2,2);
+		   
+
+ UPDATE REQUEST
+ SET Customer = 3
+  WHERE Gift = 2;  
+
+DELETE FROM REQUEST WHERE Gift=2;
+
